@@ -1,14 +1,17 @@
-%Low pass filter design for Ryan
+%Low pass filter design 
 % author: Gunnar Pope
 % 10/24/16
 
 close all
 clear all
 
+% Set the sampling frequency, cutoff freq, and desired filter order
 Fsamp = 20;         % Sampling Frequency in Hz
 Fstop = 1.5;        % Cutoff Frequency in Hz
-Fnyq = Fsamp/2;     % Nyquist Frequency, (the highest observable freq)
 n = 50;            % The filter order
+
+
+Fnyq = Fsamp/2;     % Nyquist Frequency, (the highest observable freq)
 Wn = Fstop/Fnyq;    % Ratio of Fstop freq and Nyquist Freq
 b = fir1(n+1,Wn);   % The filter coefficients
 
